@@ -34,10 +34,15 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        // $this->middleware('guest')->except('logout');
     }
 
-    public function login(){
-        echo "haha";exit;
+    public function index(){
+        return view('auth/login');
     }
+
+     public function dologin(){
+        var_dump('6666');exit;
+    }
+
 }

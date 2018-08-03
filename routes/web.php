@@ -15,7 +15,18 @@
 //     return view('welcome');
 // });
 
+
+
 Route::group(['namespace'=>'Auth'], function (){
-    Route::get('/', 'LoginController@login');
+	Route::get('/', 'LoginController@index')->name('login');
+	Route::get('/dologin', 'LoginController@dologin')->name('dologin');
+	Route::get('/kit/captcha/{tmp}', 'KitController@captcha')->name('captcha');
 });
 
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
